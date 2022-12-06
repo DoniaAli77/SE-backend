@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <head>
+      <link rel='stylesheet' href='/styles/bootstrap.min.css' />
+      <link rel='stylesheet' href='/styles/style.css' />
+      <script src="/js/jquery-2.2.0.min.js" type="text/javascript"></script>
+      <script src="/js/bootstrap.min.js" type="text/javascript"></script>
+    </head>
+  </head>
+  <body>
+    <script>
+      $(document).ready(function(){
+        var x = [{{arr}}];
+        x.push(4)
+        console.log(x);
+      });
+    </script>
+    <div>
+      <nav class="navbar navbar-inverse" style="padding-left:130px;">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/employee">Employee</a></li>
+            <li><a href="/addEmployee">Add</a></li>
+          </ul>
+      </nav>
+    </div>
+
+    <div class="center">
+      <h1>{{ title }}</h1>
+      <p>{{ desc }}</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <head>
+      <link rel='stylesheet' href='/styles/bootstrap.min.css' />
+      <link rel='stylesheet' href='/styles/style.css' />
+      <script src="/js/jquery-2.2.0.min.js" type="text/javascript"></script>
+      <script src="/js/bootstrap.min.js" type="text/javascript"></script>
+    </head>
+  </head>
+  <body>
+    <script src="/src/employee.js" type="text/javascript"></script>
+
+    <div>
+      <nav class="navbar navbar-inverse" style="padding-left:130px;">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li class="active"><a href="/employee">Employee</a></li>
+            <li><a href="/addEmployee">Add</a></li>
+          </ul>
+      </nav>
+    </div>
+
+    <div class="container">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th class="text-center">ID</th>
+            <th class="text-center">FirstName</th>
+            <th class="text-center">MiddleName</th>
+            <th class="text-center">LastName</th>
+            <th class="text-center">Country</th>
+            <th class="text-center">Salary</th>
+            <th class="text-center">Birthdate</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+  
+        </tbody>
+      </table>
+    </div>
+
+  </body>
+</html>
