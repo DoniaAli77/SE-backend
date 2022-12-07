@@ -13,7 +13,7 @@ router.get('/' , async (req , res) => {
 router.get('/view' , async (req , res) => {
   try{
   const result = await db.raw(`select * from employee`);
-  //console.log(`result here`,result.rows);
+  console.log(`result here`,result);
   res.send(result.rows);
   }catch(err){
       console.log("error message",err.message);
@@ -37,11 +37,12 @@ router.post("/new", async (req, res) => {
 
 });
 
+
 router.get('/:id', async (req, res)=> {
   try {
     const query = `select * from employee where id = ${req.params.id}`;
-    console.log(req.params.id);
     const result = await db.raw(query);
+    console.log(result)
     res.send(result.rows);
   } catch (err) {
     console.log("eror message", err.message);
@@ -66,7 +67,7 @@ router.delete('/:id', async (req, res)=> {
 router.put('/:id', async (req, res)=> {
   
   try {
-    const {country , birthdate , salary} = req.body;
+    const { salary} = req.body;
     console.log(req.body);
     const query = `update employee
                        set country = '${country}',
@@ -81,6 +82,8 @@ router.put('/:id', async (req, res)=> {
   }
 
 });
+
+
 
 
 /*

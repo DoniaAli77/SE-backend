@@ -2,11 +2,10 @@ const config = {
     client: 'pg',
     connection: {
       host : 'localhost',
-      port : 5432,
+      port : 3000,
       user : 'postgres',
-      password : '123',
+      password : '1234',
       database : 'postgres'
     }
   };
-
-  module.exports = require('knex')(config);
+module.exports = require('knex')(config);
