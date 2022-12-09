@@ -13,25 +13,6 @@ $(document).ready(function(){
 
       const employeeObj = {firstname,middlename,lastname,salary,country,birthdate};
       console.log(employeeObj)
-      
-      
-
-      $.ajax({
-        type: "POST",
-        url: '/employee/new',
-        data: employeeObj,
-        success: function (data){
-          if(data) {
-            $('#fname').val("");
-            $('#mname').val("");
-            $('#lname').val("");        
-            $('#salary').val("");
-            $('#country').val("");
-            $('#birthdate').val("");
-            console.log("message from server",data);
-            alert(data);
-          }
-        }
-      });
+      alert("employee added successfuly");
     });
 });

@@ -1,15 +1,34 @@
-$(document).ready(function(){
-    //console.log("data",{{data}});
-    $.ajax({
-        type: "GET",
-        url: '/employee/view',
-        success: function(data){
-          if(data) {
-              for( let row of data ){
-                let date = new Date(row.birthdate);
-                let formattedDate = `${(date.getMonth() + 1)}/${date.getDate()}/${date.getFullYear()}`;
-                $('#tbody').append(
-                    `<tr>
+$(document).ready(function () {
+  //console.log("data",{{data}});
+  let data = [
+    {
+      id: 1,
+      firstname: "donia",
+      middlename: "ali",
+      lastname: "ali",
+      country: "cairo",
+      salary: 1000,
+      birthdate: "1999-7-7",
+    },
+    {
+      id: 2,
+      firstname: "donia",
+      middlename: "ali",
+      lastname: "ali",
+      country: "cairo",
+      salary: 1000,
+      birthdate: "1999-7-7",
+    },
+  ];
+
+  if (data) {
+    for (let row of data) {
+      let date = new Date(row.birthdate);
+      let formattedDate = `${
+        date.getMonth() + 1
+      }/${date.getDate()}/${date.getFullYear()}`;
+      $("#tbody").append(
+        `<tr>
                           <td class="text-center">${row.id}</td>
                           <td class="text-center">${row.firstname}</td>
                           <td class="text-center">${row.middlename}</td>
@@ -20,26 +39,16 @@ $(document).ready(function(){
                           <td class="text-center">
                             <button id=${row.id} class="btn btn-danger remove" type="button">Remove</button>
                           </td>
-                    </tr>`);
-              }
-          }
-        }
-      });
+                    </tr>`
+      );
+    }
+  }
 
-      $('#tbody').on('click', '.remove', function () {
-        console.log("removed");
-        var id = $(this).attr("id");
-        $(this).parent().parent().remove();
-        $.ajax({
-        type: "DELETE",
-        data : { message : "deleted"},
-        url: '/employee/'+`${id}`,
-        success: function(data){
-          if(data) {
-            console.log(data);
-          }
-        }
-      });
-      });
-      
-  });      
+  $("#tbody").on("click", ".remove", function () {
+    console.log("removed");
+    console.log($(this));
+    var id = $(this).attr("id");
+    $(this).parent().parent().remove();
+    
+  });
+});

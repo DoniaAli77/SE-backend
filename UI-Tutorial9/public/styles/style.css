@@ -6,3 +6,8 @@
 .center {
   text-align: center;
 }
+.city{
+  text-align: left;
+  color: aqua;
+  background-color: black;
+}

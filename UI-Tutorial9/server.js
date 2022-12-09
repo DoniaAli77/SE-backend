@@ -17,16 +17,15 @@ app.use(bodyParser.urlencoded({ extended: false}));
 app.use("/employee", employeeRouter)
 
 
-app.listen(3000, ()=>{
-    console.log("Server is now listening at port 3000 on http://localhost:3000/");
+app.listen(3001, ()=>{
+    console.log("Server is now listening at port 3001 on http://localhost:3001/");
 })
 
 // Main Home page
 app.get('/' , (req , res) => {    
     return res.render('index' , 
     {title : "Tutorial 9" , 
-    desc : "Tutorial is mainly about UI connection with server" ,
-    arr : [1,2,3]
+    desc : "Tutorial is mainly about cypress" ,
     });
 });
 
@@ -36,9 +35,12 @@ app.get('/addEmployee' , (req , res) => {
 });
 
 // profile page
-app.get('/profile' , (req , res) => {    
-    return res.render('profile');
+app.get('/apply' , (req , res) => {    
+    return res.render('apply');
 });
-
+app.post('/profile' , (req , res) => {    
+    const{ fname,mname,lname,country,salary,birthdate}=req.body
+    return res.render('profile',{fname,mname,lname,country,salary,birthdate});
+});
 
 
